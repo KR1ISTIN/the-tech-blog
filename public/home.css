@@ -1,0 +1,29 @@
+#home {
+    border:black 2px solid;
+    margin:2em;
+    background-color: white;
+
+}
+
+.columns {
+    margin-top: 15%;
+}
+
+#signup {
+    display: flex;
+    justify-content: center;
+    color: #3BBA9C;
+    font-size: 2.5em; 
+    padding: none;
+    
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+}
+
+#home {
+     background-color: whitesmoke;
+     border-radius: 1em;
+}

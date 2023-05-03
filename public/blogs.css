@@ -1,0 +1,22 @@
+.text {
+    color: #3BBA9C;
+}
+
+.post {
+    color:whitesmoke;
+}
+
+.info {
+    color:#707793;
+}
+
+.section {
+    border: solid 1px black;
+    margin: 2em;
+    background-color: #3C3F58;
+}
+
+.blogData {
+    display: flex;
+    justify-content: end;
+}

@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="blogs.css">
+
+{{#each blogData as |blog|}}
+<section class="section">
+  <input type="hidden" name="post-id" value="{{blog.id}}">
+  <h1 class="title text">
+      {{blog.title}}
+  </h1>
+  <h2 class="subtitle post">
+    {{post}}
+  </h2>
+   <button class="button" id='seeMore' style="background-color: #3BBA9C;"><a href="/home/post/{{blog.id}}" style="text-decoration: none; font-color: white;">See more...</a></button>
+  <div>
+    <p class="blogData info">Author: {{ blog.user.username}}</p>
+    <p class="blogData info">Created on: {{ blog.date}}</p>
+  </div>
+</section>
+{{/each}}
+
+
+<script src="/js/commentsView.js"></script>
+<!--this page if for when after ther user logs in or signs up so then ALL BLOGS will populate on screen--->

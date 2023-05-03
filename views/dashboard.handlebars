@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blogs.css">
+
+{{#each dashData as |dash|}}
+<section class="section">
+  <input type="hidden" name="post-id" value="{{dash.id}}">
+  <h1 class="title text">
+      {{dash.title}}
+  </h1>
+  <h2 class="subtitle post">
+    {{post}}
+  </h2>
+   <button class="button" id='seeMore' style="background-color: #3BBA9C;"><a href="/home/post/{{dash.id}}" style="text-decoration: none; font-color: white;">See more...</a></button>
+  <div>
+    <p class="blogData info">Author: {{ dash.user.username}}</p>
+    <p class="blogData info">Created on: {{ dash.createdAt}}</p>
+  </div>
+</section>
+{{/each}}
+
+<button id="createBlogOpen" data-target="create-blog-modal" class="button is-success">Create New Blog</button>
+
+<form id="createBlog">
+  <div id="create-blog-modal" class="modal">
+    <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <p style='display: flex; justify-content:center; padding: 1em'>
+              Create Blog!
+          </p>
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input id='newTitle'class="input" type="text" placeholder="New Blog Title" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control has-icons-left">
+                <textarea id='newBlog' class="input" placeholder="Enter blog information" required></textarea>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control has-icons-left">
+                <input id='blogDate'class="input" type="date" required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <button style='display: flex; justify-items:center; margin:auto'class="button is-success createBlogButton">
+                  Create New Blog!
+                </button>
+              </p>
+            </div>
+        </div>
+      </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+</form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  // Functions to open and close a modal
+  function openModal($el) {
+    $el.classList.add('is-active');
+  }
+
+  function closeModal($el) {
+    $el.classList.remove('is-active');
+  }
+
+  function closeAllModals() {
+    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+      closeModal($modal);
+    });
+  }
+
+  // Add a click event on buttons to open a specific modal
+  (document.querySelectorAll('#createBlogOpen') || []).forEach(($trigger) => {
+    const modal = $trigger.dataset.target;
+    const $target = document.getElementById(modal);
+
+    $trigger.addEventListener('click', () => {
+      openModal($target);
+    });
+  });
+
+  // Add a click event on various child elements to close the parent modal
+  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+      closeModal($target);
+    });
+  });
+
+  // Add a keyboard event to close all modals
+  document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+
+    if (e.keyCode === 27) { // Escape key
+      closeAllModals();
+    }
+  });
+});
+</script>
+<script src="/js/newBlog.js"></script>
+
+{{!-- this page is for viewing the user's blogs they've created and for creating new blogs --}}

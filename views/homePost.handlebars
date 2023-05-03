@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="../blogs.css">
+
+<section class="section" style="border: solid 1px black;
+        margin: 2em;
+        background-color: #3C3F58;">
+    <h1 class="title text" style="color: #3BBA9C;">
+        {{title}}
+    </h1>
+    <h2 class="subtitle post" style="color:whitesmoke;">
+        {{post}}
+    </h2>
+    <div class="blogData">
+        <p class=" info" style="color:#707793; display: flex;
+            justify-content: end">Author: {{ author }}</p>
+        
+        <p class=" info" style="color:#707793; display: flex;
+            justify-content: end">Created on: {{ date}}</p>
+  </div>
+    <section>
+        <p class=" post" style="color:whitesmoke;">
+            {{comments.comment}}
+        <p>
+        <br>
+       <button class="button" id='addComments'style="background-color: #3BBA9C; border: white;"><a href="/home/post/{{id}}" style="text-decoration: none; font-color: white;">Add Comments</a></button>
+    </section>
+</section>
+
+
+        <!--this page is for when the user clicks on a certain blog and that blog will pop up with th
+        date, title, post, comments, and the author(the user) who wrote the post
+        -->
