@@ -15,6 +15,7 @@
     <p class="blogData info">Author: {{ dash.user.username}}</p>
     <p class="blogData info">Created on: {{ dash.createdAt}}</p>
   </div>
+  <button class="button is-danger" id="deleteBlogButton">Delete</button>
 </section>
 {{/each}}
 
@@ -115,5 +116,6 @@
 });
 </script>
 <script src="/js/newBlog.js"></script>
+<script src="/js/editBlog.js"></script>
 
 {{!-- this page is for viewing the user's blogs they've created and for creating new blogs --}}
