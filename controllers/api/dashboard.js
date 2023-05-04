@@ -54,7 +54,7 @@ const withAuth = require('../../utils/auth');
         { where: {id: req.params.id} } 
         );
       if(!updateBlog) {
-        res.status(404).json({message: 'No user with this ID found'});
+        res.status(404).json({message: 'No blog with this ID found'});
         return;
       }
       res.status(200).json(updateBlog)

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Blog, Comments } = require('../../models');
 const bcrypt = require('bcrypt');
-const withAuth = require('../../utils/auth');// need to add once testing has been done
+const withAuth = require('../../utils/auth');
 
 //main/user this will give me info to find all users
 router.get('/', withAuth, async (req, res) => {

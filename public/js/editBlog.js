@@ -1,7 +1,7 @@
+const id = document.querySelector('input[name="post-id"]').value;
+
 const deleteBlog = async (event) => {
     event.preventDefault();
-
-    const id = document.querySelector('input[name="post-id"]').value;
   
     const response = await fetch(`/main/dashboard/${id}`, {
         method: 'DELETE',
@@ -18,3 +18,32 @@ const deleteBlog = async (event) => {
 document
     .querySelector('#deleteBlogButton')
     .addEventListener('click', deleteBlog);
+
+
+const editBlog = async (event) => {
+    event.preventDefault();
+
+    const newTitle = document.querySelector('#editTitle').value;
+    const newPost = document.querySelector('#editBlogInfo').value;
+    
+    const response = await fetch(`/main/dashboard/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            title: newTitle,
+            post: newPost
+        }),
+        headers: { 'Content-Type': 'application/json' },
+    });
+
+    console.log('hello there');
+
+    if(response.ok) {
+        document.location.replace('/main/dashboard');
+    } else {
+        alert("Update unsuccessful.  Please try again.")
+    }
+}
+
+document
+    .querySelector('#editBlog')
+    .addEventListener('submit', editBlog);
