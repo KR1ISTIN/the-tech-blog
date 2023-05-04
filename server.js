@@ -1,3 +1,5 @@
+// sometimes it takes a few attmepts to login or log out or delete a post -- seems like a time-based issue?
+
 const path = require('path');
 const express = require('express');
 const app = express();
