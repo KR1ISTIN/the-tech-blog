@@ -1,5 +1,6 @@
 const id = document.querySelector('input[name="post-id"]').value;
 
+// delete blog
 const deleteBlog = async (event) => {
     event.preventDefault();
   
@@ -20,6 +21,7 @@ document
     .addEventListener('click', deleteBlog);
 
 
+// edit blog
 const editBlog = async (event) => {
     event.preventDefault();
 
@@ -34,8 +36,6 @@ const editBlog = async (event) => {
         }),
         headers: { 'Content-Type': 'application/json' },
     });
-
-    console.log('hello there');
 
     if(response.ok) {
         document.location.replace('/main/dashboard');

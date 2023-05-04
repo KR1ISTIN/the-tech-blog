@@ -71,6 +71,7 @@ const withAuth = require('../utils/auth');
         console.log(err);
       }
     });
+    
     // updates a comment made on a post  
     // this ID is referencing the id in the Comments table to updte it 
     router.put('/home/post/:post_id/comments/:comment_id', withAuth, async (req, res) => { 

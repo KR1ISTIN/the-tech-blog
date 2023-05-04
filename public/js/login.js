@@ -24,7 +24,3 @@ const loginModal = async (event) => {
   document
     .querySelector('#loginModal')
     .addEventListener('submit', loginModal);
-
-  //delete this below later when submitting
-  // username: testuser22
-  // password: hellothings12

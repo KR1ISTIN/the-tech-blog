@@ -1,4 +1,4 @@
-const logout = async () => { // fix route 
+const logout = async () => { 
     const response = await fetch('/main/user/logout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

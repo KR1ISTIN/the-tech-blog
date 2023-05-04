@@ -1,6 +1,3 @@
-// const seeMore = document.getElementById('seeMore');
-// seeMore.addEventListener("click", (blog) => {
-
 const viewPostComments = async (event) => {
   event.preventDefault(); 
   const postId = document.querySelector("input[name='post-id']").value;
@@ -22,3 +19,6 @@ const viewPostComments = async (event) => {
 };
 
 document.addEventListener('submit', viewPostComments);
+
+// still working on this file
+// file is to view comments on the blog

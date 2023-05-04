@@ -4,12 +4,12 @@ const commentData = [
     {
       use_id: 1,
       blog_id: 1,
-      comment: 'this is my comment'
+      comment: 'Wow! Interesting.'
     },
     {
       use_id: 2,
       blog_id: 2,
-      comment: 'im ready for vacay'
+      comment: 'Would have not thought of this.'
     },
 ];
 
